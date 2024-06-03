@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  rectangleapp.api:
+    image: ${DOCKER_REGISTRY-}rectangleappapi
+    build:
+      context: .
+      dockerfile: Presentation/RectangleApp.Api/Dockerfile
+    depends_on: 
+    - sqldatabase
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+    - "5000:80"
+  sqldatabase:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql_server
+    environment:
+        SA_PASSWORD: "Password12345678!!"
+        ACCEPT_EULA: "Y"
+    ports:
+    - "1433:1433"

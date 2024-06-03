@@ -1,0 +1,12 @@
+﻿{
+  "AppDbConnectionModel": {
+    "serverName": "sqldatabase",
+    "database": "TestDb",
+    "username": "SA",
+    "password": "Password12345678!!",
+    "trustedConnection": false
+  },
+  "RectangleCount": 200,
+  "Username": "testUsername",
+  "Password": "testPassword"
+}
